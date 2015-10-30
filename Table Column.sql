@@ -22,11 +22,10 @@ pg_targeting_groups(id,description,max_cpm,freq_cap_daily,freq_cap_total,user_id
 
 pg_users(id, email)
 
-pixel_volume(date,provider_id[column_family in other tables],pixel_volume)
+pixel_ag(date,provider_id[column_family in other tables],pixel_volume)
 
 sotto(time_stamp,targeting_group_id,model_version_raw,bids,imps,clks,clkconvs,cost,fb_page_type,otto_obey_full_user_query,payout_type,currency,account_email,payout_value,revenue,margin,otto_disabled,exchange_code)
 
 rt_pixels_aggregate(date_stamp,provider_id[column_family in other tables],uu_pixeled)
 
 rt_pixels(time_stamp,import_time_stamp,time_stamp_unix,user_id,provider_id[column_family in other tables],segment,pixel_key,value,user_agent,ip,version,hostname,ppk_type)
-
