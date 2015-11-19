@@ -166,5 +166,41 @@ group by date_trunc('month', time_stamp)::date
 -- 2015-09	30,044,615
 -- 2015-10	28,891,600
 
+-- daily avg uniques
+select avg(daily_uu)
+from (select time_stamp::date, count(distinct user_id) as daily_uu
+from rt_pixels
+where provider_id = 'Vistaprint' and time_stamp >= '2015-10-01'
+group by time_stamp::date)
+--1,046,576
+
+-- Daily avg uniques from buys table
+select avg(daily_uu)
+from (select time_stamp::date, count(distinct user_id) as daily_uu
+from buys
+where campaign_id in (10653, 11226) and time_stamp >= '2015-10-01'
+group by time_stamp::date)
+-- 96,011 about 9% of rt_pixels
+
+-- Daily uniques by day
+select time_stamp::date, count(distinct user_id) as daily_uu
+from buys
+where campaign_id in (10653, 11226) 
+and time_stamp >= '2015-08-01' and time_stamp < '2015-11-01'
+group by time_stamp::date
+
+-- Daily uniques by day from rt_pixels
+select time_stamp::date, count(distinct user_id) as daily_uu
+from rt_pixels
+where provider_id = 'Vistaprint'
+and time_stamp >= '2015-08-01' and time_stamp < '2015-11-01'
+group by time_stamp::date
+
+-- Count uniques in both table by day
+select b.time_stamp::date, count(distinct b.user_id)
+from buys b join rt_pixels r
+on b.user_id = r.user_id and b.time_stamp::date = r.time_stamp::date
+where b.campaign_id in (10653, 11226) and b.time_stamp >= '2015-08-01' and b.time_stamp < '2015-11-01'
+group by b.time_stamp::date
 
 rollback

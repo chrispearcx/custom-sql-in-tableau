@@ -1,0 +1,1668 @@
+bo_report_hpm
+(
+        id,
+        reportDate,
+        status,
+        boUserId,
+        periodBegin,
+        periodEnd,
+        currentWeekBegin,
+        currentWeekEnd,
+        previousWeekBegin,
+        previousWeekEnd,
+        news,
+        pros,
+        cons
+);
+
+
+    bo_report_hpm_comments
+(
+        id,
+        commentDate,
+        accountId,
+        boUserId,
+        COMMENT,
+        status
+);
+
+
+    bo_report_hpm_spent_by_account_consolidated
+(
+        id,
+        reportDate,
+        accountId,
+        userId,
+        email,
+        company,
+        prettyName,
+        monthBegin,
+        monthEnd,
+        currentWeekBegin,
+        currentWeekEnd,
+        previousWeekBegin,
+        previousWeekEnd,
+        currencyCode,
+        currencyOffset,
+        spentMonth,
+        spentCurrentWeek,
+        spentPreviousWeek
+);
+
+
+    categories
+(
+        id,
+        categoryId,
+        name,
+        language
+);
+
+
+    CmpHuTemp
+(
+        Id,
+        CmpValue,
+        AllowedToUse,
+        CreateDate
+);
+
+
+    default_params
+(
+        id,
+        defaultAccount,
+        commission
+);
+
+
+    engine_config
+(
+        id,
+        engineNumber,
+        name,
+        accounts_data,
+        accounts_statistics,
+        accounts_restart,
+        accounts_pause,
+        accounts_financial,
+        campaigns_data,
+        campaigns_statistics,
+        campaigns_pause,
+        campaigns_automaticBidCalc,
+        campaigns_changeBudget,
+        ads_generalData,
+        ads_statisticsData,
+        ads_restartPossibleBetterBid,
+        ads_pause,
+        ads_changePrice,
+        pixel_generalData,
+        adsEditLimit,
+        status,
+        log_lines,
+        cycles_seconds,
+        DATE
+);
+
+
+    fb_accounts
+(
+        id,
+        userId,
+        prettyName,
+        businessName,
+        name,
+        currecy,
+        currencyCode,
+        currencyOffset,
+        timezone,
+        timezoneName,
+        isPersonal,
+        balance,
+        amountSpent,
+        dailySpendLimit,
+        spendCap,
+        status,
+        DATE,
+        lastUpdate,
+        customName,
+        customStatus
+);
+
+
+    fb_accounts_campaigns_to_restart
+(
+        id,
+        accountId,
+        campaignId,
+        DATE
+);
+
+
+    fb_accounts_config
+(
+        id,
+        editCount,
+        type,
+        budget,
+        originalBudget,
+        unaccountedStart,
+        unaccountedEnded,
+        partialSpent,
+        roiType,
+        roiTax,
+        roiClickWait,
+        stopDaysAfterNoActions
+);
+
+
+    fb_accounts_convertions_statistics
+(
+        accountId,
+        objectId,
+        actionType,
+        postImp1d,
+        postImp7d,
+        postImp28d,
+        postClick1d,
+        postClick7d,
+        postClick28d,
+        postImpValue1d,
+        postImpValue7d,
+        postImpValue28d,
+        postClickValue1d,
+        postClickValue7d,
+        postClickValue28d,
+        startDate,
+        endDate,
+        DATE
+);
+
+
+    fb_accounts_convertions_statistics_consolidated_actions
+(
+        accountId,
+        actionType,
+        postImp1d,
+        postImp7d,
+        postImp28d,
+        postClick1d,
+        postClick7d,
+        postClick28d,
+        postImpValue1d,
+        postImpValue7d,
+        postImpValue28d,
+        postClickValue1d,
+        postClickValue7d,
+        postClickValue28d,
+        DATE
+);
+
+
+    fb_accounts_convertions_statistics_consolidated_objects
+(
+        accountId,
+        objectId,
+        actionType,
+        postImp1d,
+        postImp7d,
+        postImp28d,
+        postClick1d,
+        postClick7d,
+        postClick28d,
+        postImpValue1d,
+        postImpValue7d,
+        postImpValue28d,
+        postClickValue1d,
+        postClickValue7d,
+        postClickValue28d,
+        DATE
+);
+
+
+    fb_accounts_statistics
+(
+        id,
+        accountId,
+        facebookStatsId,
+        impressions,
+        clicks,
+        spent,
+        socialImpressions,
+        socialClicks,
+        socialSpent,
+        uniqueImpressions,
+        socialUniqueImpressions,
+        uniqueClicks,
+        socialUniqueClicks,
+        actions,
+        newsFeed,
+        appInstall,
+        offsiteCheckout,
+        offsiteRegistration,
+        offsiteLead,
+        offsiteKeyPageView,
+        offsiteAddToCart,
+        offsiteOther,
+        isLifetime,
+        startTime,
+        endTime,
+        DATE,
+        appUse,
+        checkin,
+        COMMENT,
+        LIKE,
+        linkClick,
+        mention,
+        mobileAppInstall,
+        photoView,
+        post,
+        postLike,
+        tabView,
+        videoPlay,
+        vote,
+        follow,
+        recommendation,
+        hotMilhasRegisters,
+        hotMilhasMiles
+);
+
+
+    fb_accounts_statistics_consolidated
+(
+        id,
+        accountId,
+        impressions,
+        clicks,
+        spent,
+        socialImpressions,
+        socialClicks,
+        socialSpent,
+        uniqueImpressions,
+        socialUniqueImpressions,
+        uniqueClicks,
+        socialUniqueClicks,
+        actions,
+        newsFeed,
+        appInstall,
+        offsiteCheckout,
+        offsiteRegistration,
+        offsiteLead,
+        offsiteKeyPageView,
+        offsiteAddToCart,
+        offsiteOther,
+        appUse,
+        checkin,
+        COMMENT,
+        LIKE,
+        linkClick,
+        mention,
+        mobileAppInstall,
+        photoView,
+        post,
+        postLike,
+        tabView,
+        videoPlay,
+        vote,
+        follow,
+        recommendation,
+        hotMilhasRegisters,
+        hotMilhasMiles,
+        DATE
+);
+
+
+    fb_accounts_statistics_hour
+(
+        id,
+        accountId,
+        hour,
+        impressions,
+        clicks,
+        spent,
+        socialImpressions,
+        socialClicks,
+        socialSpent,
+        uniqueImpressions,
+        socialUniqueImpressions,
+        uniqueClicks,
+        socialUniqueClicks,
+        actions,
+        appInstall,
+        appUse,
+        checkin,
+        COMMENT,
+        LIKE,
+        linkClick,
+        mobileAppInstall,
+        photoView,
+        post,
+        postLike,
+        receiveOffer,
+        tabView,
+        videoPlay,
+        vote,
+        follow,
+        recommendation,
+        mention,
+        offsiteCheckout,
+        offsiteRegistration,
+        offsiteLead,
+        offsiteKeyPageView,
+        offsiteAddToCart,
+        offsiteOther,
+        DATE,
+        hotMilhasRegisters,
+        hotMilhasMiles
+);
+
+
+    fb_actions_log
+(
+        id,
+        userId,
+        accountId,
+        campaignId,
+        adsId,
+        MESSAGE,
+        param1,
+        param2,
+        param3,
+        param4,
+        param5,
+        DATE,
+        campaignGroupId,
+        migrated
+);
+
+
+    fb_actions_type
+(
+        id,
+        userId,
+        kpiId,
+        name,
+        ALL,
+        dbColumnName,
+        fbName,
+        fbObjective,
+        isRoiCalculable
+);
+
+
+    fb_ads
+(
+        id,
+        accountId,
+        campaignGroupId,
+        campaignId,
+        pixelId,
+        name,
+        adStatus,
+        maxBid,
+        actionType,
+        ageMax,
+        ageMin,
+        image,
+        creative,
+        linkUrl,
+        startTime,
+        endTime,
+        updatedTime,
+        createdBy,
+        getEstimateErrors,
+        needUpdate,
+        DATE,
+        ecommerceXmlStatus,
+        lastUpdateDate,
+        fullLinkUrl,
+        isAutobid,
+        bidAmount
+);
+
+
+    fb_ads_bids
+(
+        id,
+        adId,
+        isAuto,
+        value,
+        DATE
+);
+
+
+    fb_ads_config
+(
+        id,
+        editCount,
+        pauseAds,
+        changePrice,
+        automaticBidCalc,
+        dontChangeUntil,
+        maxBid,
+        bidAcceleration,
+        changeBidAcceleration,
+        needed,
+        maxDailySpend,
+        endDate,
+        lastPauseDate,
+        nextAutomaticBidCalc,
+        tryingBetterBidPrice,
+        nextCheckBetterBidPrice,
+        globalClick,
+        globalConnections,
+        globalSpent,
+        personalIntervention,
+        restartNextDay,
+        pixelType,
+        roiTax,
+        maxFrequency,
+        maxFrequencyAction,
+        maxFrequencyBidIndex,
+        frequencyDown,
+        frequencyMultiplyIndex,
+        frequencyLastMultiplyIndexAnalise,
+        restartNextDayByFrequency,
+        restartNextDayByMaxBid,
+        restartNextDayByCtr,
+        restartNextDayByRoi,
+        exactConvertionPrice,
+        customMaxBid,
+        waitHourToChange,
+        gaCampaignContent,
+        pankCampaignContent,
+        isManualPause,
+        roiClickWait,
+        pauseAdOnClickNumber,
+        hotmilhasCampaignContent,
+        hotelUrbanoCmp
+);
+
+
+    fb_ads_convertions_statistics
+(
+        adId,
+        objectId,
+        actionType,
+        postImp1d,
+        postImp7d,
+        postImp28d,
+        postClick1d,
+        postClick7d,
+        postClick28d,
+        postImpValue1d,
+        postImpValue7d,
+        postImpValue28d,
+        postClickValue1d,
+        postClickValue7d,
+        postClickValue28d,
+        startDate,
+        endDate,
+        DATE
+);
+
+
+    fb_ads_convertions_statistics_consolidated_actions
+(
+        adId,
+        actionType,
+        postImp1d,
+        postImp7d,
+        postImp28d,
+        postClick1d,
+        postClick7d,
+        postClick28d,
+        postImpValue1d,
+        postImpValue7d,
+        postImpValue28d,
+        postClickValue1d,
+        postClickValue7d,
+        postClickValue28d,
+        DATE
+);
+
+
+    fb_ads_convertions_statistics_consolidated_objects
+(
+        adId,
+        objectId,
+        actionType,
+        postImp1d,
+        postImp7d,
+        postImp28d,
+        postClick1d,
+        postClick7d,
+        postClick28d,
+        postImpValue1d,
+        postImpValue7d,
+        postImpValue28d,
+        postClickValue1d,
+        postClickValue7d,
+        postClickValue28d,
+        DATE
+);
+
+
+    fb_ads_prices
+(
+        id,
+        adsId,
+        users,
+        location,
+        cpcMin,
+        cpcMedian,
+        cpcMax,
+        cpmMin,
+        cpmMedian,
+        cpmMax,
+        DATE,
+        cpaMin,
+        cpaMed,
+        cpaMax
+);
+
+
+    fb_ads_sales
+(
+        id,
+        searchLocation,
+        action_type,
+        eTag,
+        startDate,
+        endDate,
+        objectId,
+        post_click_1d,
+        post_click_7d,
+        post_click_28d,
+        post_imp_1d,
+        post_imp_7d,
+        post_imp_28d,
+        post_click_value_1d,
+        post_click_value_7d,
+        post_click_value_28d,
+        post_imp_value_1d,
+        post_imp_value_7d,
+        post_imp_value_28d,
+        quantity,
+        value,
+        DATE,
+        voucherQuantity
+);
+
+
+    fb_ads_sales_consolidated
+(
+        id,
+        searchLocation,
+        action_type,
+        objectId,
+        post_click,
+        post_imp,
+        post_click_value,
+        post_imp_value,
+        quantity,
+        value,
+        DATE,
+        voucherQuantity
+);
+
+
+    fb_ads_statistics
+(
+        id,
+        adsId,
+        facebookStatsId,
+        impressions,
+        clicks,
+        spent,
+        socialImpressions,
+        socialClicks,
+        socialSpent,
+        uniqueImpressions,
+        socialUniqueImpressions,
+        uniqueClicks,
+        socialUniqueClicks,
+        actions,
+        newsFeed,
+        appInstall,
+        offsiteCheckout,
+        offsiteRegistration,
+        offsiteLead,
+        offsiteKeyPageView,
+        offsiteAddToCart,
+        offsiteOther,
+        isLifetime,
+        startTime,
+        endTime,
+        DATE,
+        appUse,
+        checkin,
+        COMMENT,
+        LIKE,
+        linkClick,
+        mention,
+        mobileAppInstall,
+        photoView,
+        post,
+        postLike,
+        tabView,
+        videoPlay,
+        vote,
+        follow,
+        recommendation,
+        hotMilhasRegisters,
+        hotMilhasMiles
+);
+
+
+    fb_ads_statistics_consolidated
+(
+        id,
+        adId,
+        impressions,
+        clicks,
+        spent,
+        socialImpressions,
+        socialClicks,
+        socialSpent,
+        uniqueImpressions,
+        socialUniqueImpressions,
+        uniqueClicks,
+        socialUniqueClicks,
+        actions,
+        newsFeed,
+        appInstall,
+        offsiteConversion,
+        offsiteCheckout,
+        offsiteRegistration,
+        offsiteLead,
+        offsiteKeyPageView,
+        offsiteAddToCart,
+        offsiteOther,
+        appUse,
+        checkin,
+        COMMENT,
+        LIKE,
+        linkClick,
+        mention,
+        mobileAppInstall,
+        photoView,
+        post,
+        postLike,
+        tabView,
+        videoPlay,
+        vote,
+        follow,
+        recommendation,
+        DATE,
+        hotMilhasRegisters,
+        hotMilhasMiles
+);
+
+
+    fb_ads_statistics_hour
+(
+        id,
+        adsId,
+        hour,
+        impressions,
+        clicks,
+        spent,
+        socialImpressions,
+        socialClicks,
+        socialSpent,
+        uniqueImpressions,
+        socialUniqueImpressions,
+        uniqueClicks,
+        socialUniqueClicks,
+        actions,
+        appInstall,
+        appUse,
+        checkin,
+        COMMENT,
+        LIKE,
+        linkClick,
+        mobileAppInstall,
+        photoView,
+        post,
+        postLike,
+        receiveOffer,
+        tabView,
+        videoPlay,
+        vote,
+        follow,
+        recommendation,
+        mention,
+        offsiteCheckout,
+        offsiteRegistration,
+        offsiteLead,
+        offsiteKeyPageView,
+        offsiteAddToCart,
+        offsiteOther,
+        DATE,
+        hotMilhasRegisters,
+        hotMilhasMiles,
+        dateOnly
+);
+
+
+    fb_campaign_group
+(
+        id,
+        accountId,
+        name,
+        actionType,
+        fbObjective,
+        roiType,
+        status,
+        DATE,
+        buyingType,
+        spendCap
+);
+
+
+    fb_campaign_group_statistics
+(
+        id,
+        campaignGroupId,
+        facebookStatsId,
+        impressions,
+        clicks,
+        spent,
+        socialImpressions,
+        socialClicks,
+        socialSpent,
+        uniqueImpressions,
+        socialUniqueImpressions,
+        uniqueClicks,
+        socialUniqueClicks,
+        actions,
+        newsFeed,
+        appInstall,
+        offsiteCheckout,
+        offsiteRegistration,
+        offsiteLead,
+        offsiteKeyPageView,
+        offsiteAddToCart,
+        offsiteOther,
+        isLifetime,
+        startTime,
+        endTime,
+        DATE,
+        appUse,
+        checkin,
+        COMMENT,
+        LIKE,
+        linkClick,
+        mention,
+        mobileAppInstall,
+        photoView,
+        post,
+        postLike,
+        tabView,
+        videoPlay,
+        vote,
+        follow,
+        recommendation,
+        hotMilhasRegisters,
+        hotMilhasMiles
+);
+
+
+    fb_campaign_group_statistics_consolidated
+(
+        id,
+        campaignGroupId,
+        impressions,
+        clicks,
+        spent,
+        socialImpressions,
+        socialClicks,
+        socialSpent,
+        uniqueImpressions,
+        socialUniqueImpressions,
+        uniqueClicks,
+        socialUniqueClicks,
+        actions,
+        newsFeed,
+        appInstall,
+        offsiteConversion,
+        offsiteCheckout,
+        offsiteRegistration,
+        offsiteLead,
+        offsiteKeyPageView,
+        offsiteAddToCart,
+        offsiteOther,
+        appUse,
+        checkin,
+        COMMENT,
+        LIKE,
+        linkClick,
+        mention,
+        mobileAppInstall,
+        photoView,
+        post,
+        postLike,
+        tabView,
+        videoPlay,
+        vote,
+        follow,
+        recommendation,
+        DATE,
+        hotMilhasRegisters,
+        hotMilhasMiles
+);
+
+
+    fb_campaign_group_statistics_hour
+(
+        id,
+        campaignGroupId,
+        hour,
+        impressions,
+        clicks,
+        spent,
+        socialImpressions,
+        socialClicks,
+        socialSpent,
+        uniqueImpressions,
+        socialUniqueImpressions,
+        uniqueClicks,
+        socialUniqueClicks,
+        actions,
+        appInstall,
+        appUse,
+        checkin,
+        COMMENT,
+        LIKE,
+        linkClick,
+        mobileAppInstall,
+        photoView,
+        post,
+        postLike,
+        receiveOffer,
+        tabView,
+        videoPlay,
+        vote,
+        follow,
+        recommendation,
+        mention,
+        offsiteCheckout,
+        offsiteRegistration,
+        offsiteLead,
+        offsiteKeyPageView,
+        offsiteAddToCart,
+        offsiteOther,
+        DATE,
+        hotMilhasRegisters,
+        hotMilhasMiles
+);
+
+
+    fb_campaign_groups_sales
+(
+        id,
+        searchLocation,
+        action_type,
+        eTag,
+        startDate,
+        endDate,
+        objectId,
+        post_click_1d,
+        post_click_7d,
+        post_click_28d,
+        post_imp_1d,
+        post_imp_7d,
+        post_imp_28d,
+        post_click_value_1d,
+        post_click_value_7d,
+        post_click_value_28d,
+        post_imp_value_1d,
+        post_imp_value_7d,
+        post_imp_value_28d,
+        quantity,
+        value,
+        DATE,
+        voucherQuantity
+);
+
+
+    fb_campaign_groups_sales_consolidated
+(
+        id,
+        searchLocation,
+        action_type,
+        objectId,
+        post_click,
+        post_imp,
+        post_click_value,
+        post_imp_value,
+        quantity,
+        value,
+        DATE,
+        voucherQuantity
+);
+
+
+    fb_campaigns
+(
+        id,
+        accountId,
+        campaignGroupId,
+        name,
+        budgetType,
+        budgetValue,
+        dailyBudget,
+        status,
+        dailyImps,
+        startTime,
+        endTime,
+        updatedTime,
+        DATE,
+        isOptimizationEnabled,
+        bidType,
+        maxBid,
+        huCmp,
+        isAutobid,
+        bidAmount,
+        billingEvent,
+        optimizationGoal
+);
+
+
+    fb_campaigns_budget_history
+(
+        campaignId,
+        budgetType,
+        budgetValue,
+        DATE
+);
+
+
+    fb_campaigns_config
+(
+        id,
+        trackingMethod,
+        editCount,
+        pauseCampaign,
+        changePrice,
+        automaticBidCalc,
+        dontChangeUntil,
+        changeBudget,
+        originalDailyBudget,
+        newDailyBudget,
+        bidType,
+        maxBid,
+        bidAcceleration,
+        needed,
+        maxGeneralSpend,
+        endDate,
+        lastPauseDate,
+        nextAutomaticBidCalc,
+        personalIntervention,
+        restartNextDay,
+        maxCtr,
+        accelerateWhenLowPrice,
+        unaccountedStart,
+        unaccountedEnded,
+        partialSpent,
+        pixelType,
+        roiType,
+        roiTax,
+        actionType,
+        maxFrequency,
+        maxFrequencyAction,
+        maxFrequencyBidIndex,
+        restartNextDayByFrequency,
+        restartNextDayByMaxBid,
+        restartNextDayByCtr,
+        restartNextDayByRoi,
+        exactConvertionPrice,
+        customMaxBid,
+        scheduleActive,
+        waitHourToChange,
+        statsBaseDays,
+        gaAccountId,
+        gaAccountWebPropertyId,
+        gaAccountProfileId,
+        gaCampaignSouce,
+        gaCampaignMedium,
+        gaCampaignName,
+        pankCampaignSouce,
+        pankCampaignMedium,
+        pankCampaignName,
+        daysToCompare,
+        adAnaliseMode,
+        stopDaysAfterNoActions,
+        isManualPause,
+        roiClickWait,
+        hotmilhasCampaignSouce,
+        hotmilhasCampaignMedium,
+        hasAdRotateRules,
+        isAdRotateEnabled,
+        hasLeastWorstAdRules,
+        isLeastWorstAdEnabled,
+        bidAccelerationReference
+);
+
+
+    fb_campaigns_convertions_statistics
+(
+        campaignId,
+        objectId,
+        actionType,
+        postImp1d,
+        postImp7d,
+        postImp28d,
+        postClick1d,
+        postClick7d,
+        postClick28d,
+        postImpValue1d,
+        postImpValue7d,
+        postImpValue28d,
+        postClickValue1d,
+        postClickValue7d,
+        postClickValue28d,
+        startDate,
+        endDate,
+        DATE
+);
+
+
+    fb_campaigns_convertions_statistics_consolidated_actions
+(
+        campaignId,
+        actionType,
+        postImp1d,
+        postImp7d,
+        postImp28d,
+        postClick1d,
+        postClick7d,
+        postClick28d,
+        postImpValue1d,
+        postImpValue7d,
+        postImpValue28d,
+        postClickValue1d,
+        postClickValue7d,
+        postClickValue28d,
+        DATE
+);
+
+
+    fb_campaigns_convertions_statistics_consolidated_objects
+(
+        campaignId,
+        objectId,
+        actionType,
+        postImp1d,
+        postImp7d,
+        postImp28d,
+        postClick1d,
+        postClick7d,
+        postClick28d,
+        postImpValue1d,
+        postImpValue7d,
+        postImpValue28d,
+        postClickValue1d,
+        postClickValue7d,
+        postClickValue28d,
+        DATE
+);
+
+
+    fb_campaigns_sales
+(
+        id,
+        searchLocation,
+        action_type,
+        eTag,
+        startDate,
+        endDate,
+        objectId,
+        post_click_1d,
+        post_click_7d,
+        post_click_28d,
+        post_imp_1d,
+        post_imp_7d,
+        post_imp_28d,
+        post_click_value_1d,
+        post_click_value_7d,
+        post_click_value_28d,
+        post_imp_value_1d,
+        post_imp_value_7d,
+        post_imp_value_28d,
+        quantity,
+        value,
+        DATE,
+        voucherQuantity
+);
+
+
+    fb_campaigns_sales_consolidated
+(
+        id,
+        searchLocation,
+        action_type,
+        objectId,
+        post_click,
+        post_imp,
+        post_click_value,
+        post_imp_value,
+        quantity,
+        value,
+        DATE,
+        voucherQuantity
+);
+
+
+    fb_campaigns_schedule
+(
+        id,
+        campaignId,
+        DAY,
+        startTime,
+        endTime
+);
+
+
+    fb_campaigns_statistics
+(
+        id,
+        campaignId,
+        facebookStatsId,
+        impressions,
+        clicks,
+        spent,
+        socialImpressions,
+        socialClicks,
+        socialSpent,
+        uniqueImpressions,
+        socialUniqueImpressions,
+        uniqueClicks,
+        socialUniqueClicks,
+        actions,
+        newsFeed,
+        appInstall,
+        offsiteCheckout,
+        offsiteRegistration,
+        offsiteLead,
+        offsiteKeyPageView,
+        offsiteAddToCart,
+        offsiteOther,
+        isLifetime,
+        startTime,
+        endTime,
+        DATE,
+        appUse,
+        checkin,
+        COMMENT,
+        LIKE,
+        linkClick,
+        mention,
+        mobileAppInstall,
+        photoView,
+        post,
+        postLike,
+        tabView,
+        videoPlay,
+        vote,
+        follow,
+        recommendation,
+        hotMilhasRegisters,
+        hotMilhasMiles
+);
+
+
+    fb_campaigns_statistics_consolidated
+(
+        id,
+        campaignId,
+        impressions,
+        clicks,
+        spent,
+        socialImpressions,
+        socialClicks,
+        socialSpent,
+        uniqueImpressions,
+        socialUniqueImpressions,
+        uniqueClicks,
+        socialUniqueClicks,
+        actions,
+        newsFeed,
+        appInstall,
+        offsiteConversion,
+        offsiteCheckout,
+        offsiteRegistration,
+        offsiteLead,
+        offsiteKeyPageView,
+        offsiteAddToCart,
+        offsiteOther,
+        appUse,
+        checkin,
+        COMMENT,
+        LIKE,
+        linkClick,
+        mention,
+        mobileAppInstall,
+        photoView,
+        post,
+        postLike,
+        tabView,
+        videoPlay,
+        vote,
+        follow,
+        recommendation,
+        DATE,
+        hotMilhasRegisters,
+        hotMilhasMiles
+);
+
+
+    fb_campaigns_statistics_hour
+(
+        id,
+        campaignId,
+        hour,
+        impressions,
+        clicks,
+        spent,
+        socialImpressions,
+        socialClicks,
+        socialSpent,
+        uniqueImpressions,
+        socialUniqueImpressions,
+        uniqueClicks,
+        socialUniqueClicks,
+        actions,
+        appInstall,
+        appUse,
+        checkin,
+        COMMENT,
+        LIKE,
+        linkClick,
+        mobileAppInstall,
+        photoView,
+        post,
+        postLike,
+        receiveOffer,
+        tabView,
+        videoPlay,
+        vote,
+        follow,
+        recommendation,
+        mention,
+        offsiteCheckout,
+        offsiteRegistration,
+        offsiteLead,
+        offsiteKeyPageView,
+        offsiteAddToCart,
+        offsiteOther,
+        DATE,
+        hotMilhasRegisters,
+        hotMilhasMiles
+);
+
+
+    fb_currencies
+(
+        currency,
+        name,
+        offset
+);
+
+
+    fb_errors
+(
+        id,
+        referenceId,
+        referenceType,
+        uri,
+        code,
+        MESSAGE,
+        DATE,
+        proccessed
+);
+
+
+    fb_errors_config
+(
+        DATE
+);
+
+
+    fb_pixel
+(
+        id,
+        accountId,
+        name,
+        creationDate,
+        type,
+        status
+);
+
+
+    financial_user
+(
+        id,
+        idUser,
+        startDate,
+        endDate,
+        lastUpdate,
+        currency,
+        cost,
+        commission,
+        status
+);
+
+
+    financial_user_accounts
+(
+        id,
+        financialId,
+        accountId,
+        totalSpent,
+        commission,
+        startDate,
+        endDate
+);
+
+
+    financial_user_ads
+(
+        id,
+        financialId,
+        accountId,
+        campaignId,
+        adId,
+        totalSpent,
+        commission,
+        startDate,
+        endDate
+);
+
+
+    financial_user_campaigns
+(
+        id,
+        financialId,
+        accountId,
+        campaignId,
+        totalSpent,
+        commission,
+        startDate,
+        endDate
+);
+
+
+    log_exception
+(
+        id,
+        local,
+        MESSAGE,
+        DATE,
+        userId,
+        source,
+        stackTrace,
+        enviroment,
+        innerException
+);
+
+
+    monitoring_page_history
+(
+        id,
+        page_id,
+        DATE,
+        fans,
+        engagement
+);
+
+
+    monitoring_pages
+(
+        id,
+        name,
+        facebook_id,
+        last_sync,
+        fans,
+        engagement,
+        diff_day,
+        diff_month
+);
+
+
+    monitoring_user_page
+(
+        page_id,
+        user_id
+);
+
+
+    new_currencies
+(
+        id,
+        name,
+        fbOffset
+);
+
+
+    new_fb_accounts
+(
+        accountId,
+        userId,
+        friendlyName,
+        name,
+        businessName,
+        businessCountryCode,
+        businessState,
+        businessCity,
+        businessStreet,
+        businessStreet2,
+        businessZip,
+        currency,
+        balance,
+        amountSpent,
+        dailySpendLimit,
+        spendCap,
+        isPersonal,
+        timezoneId,
+        timezoneName,
+        timezoneOffsetHoursUtc,
+        status,
+        age,
+        lastUpdate,
+        GETDATE
+);
+
+
+    new_fb_accounts_capabilities
+(
+        accountId,
+        capabilitiesId
+);
+
+
+    new_timezones
+(
+        id,
+        name
+);
+
+
+    page_posts
+(
+        id,
+        is_published,
+        created_time,
+        scheduled_publish_time,
+        MESSAGE,
+        type,
+        location,
+        reach,
+        engagement,
+        people_talking,
+        link,
+        icon,
+        picture
+);
+
+
+    send_notify_list
+(
+        id,
+        userId,
+        accountId,
+        campaignId,
+        adId,
+        sector,
+        MESSAGE,
+        param1,
+        param2,
+        param3,
+        param4,
+        param5,
+        sent,
+        DATE
+);
+
+
+    sysdiagrams
+(
+        name,
+        principal_id,
+        diagram_id,
+        version,
+        definition
+);
+
+
+    Term
+(
+        id,
+        termName,
+        termDescription,
+        dateCreate,
+        active,
+        termType
+);
+
+
+    termAcceptUser
+(
+        idTerm,
+        idUser,
+        dateAccept,
+        ipUserAccept
+);
+
+
+    user_params
+(
+        userId,
+        defaultAccount,
+        commission
+);
+
+
+    user_reports_config
+(
+        id,
+        userId,
+        campaignPause,
+        adPause,
+        adRestart,
+        adChangeBid,
+        dailyBudgetNotReached,
+        campaignDaily,
+        campaignWeekly,
+        lastChangeDate
+);
+
+
+    user_reports_except
+(
+        id,
+        configId,
+        accountId,
+        campaignId
+);
+
+
+    user_reports_sent
+(
+        id,
+        userId,
+        lastSingleSent,
+        lastDailySent,
+        lastWeeklySent,
+        lastBudgetSent
+);
+
+
+    users
+(
+        id,
+        firstName,
+        lastName,
+        company,
+        phone,
+        cellPhone,
+        email,
+        password,
+        language,
+        country,
+        fbToken,
+        fbTokenValid,
+        gaToken,
+        gaRefreshToken,
+        gaTokenValid,
+        parentId,
+        lastLogin,
+        accountsPermission,
+        campaignsPermission,
+        adsPermission,
+        rangePermission,
+        financialPermission,
+        usersPermission,
+        reportsPermission,
+        dashboardPermission,
+        pixelPermission,
+        usersPostManagerPermission,
+        gaPermission,
+        flagMaster,
+        engineDataSync,
+        userDataSync,
+        status,
+        DATE,
+        flagNewsLetter,
+        typeUser,
+        typePermission,
+        campaignGroupPermission,
+        ecommercePermission
+);
+
+
+    users_accounts_access
+(
+        id,
+        userId,
+        fb_accountId,
+        access
+);
+
+
+    users_campaigns_access
+(
+        id,
+        userId,
+        fb_accountId,
+        fb_campaignId,
+        access
+);
+
+
+    userTypeTerm
+(
+        idUserType,
+        idTerm
+);
