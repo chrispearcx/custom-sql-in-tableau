@@ -116,4 +116,6 @@ SELECT
 FROM leadgm_campaign 
 	LEFT JOIN leadgm_userprofile USING (user_id);
 ```
+#### Snapshot of Tableau dashboard
+![alt text](https://lagunita.stanford.edu/c4x/DB/SQL/asset/social.png "Logo Title Text 1")
 
