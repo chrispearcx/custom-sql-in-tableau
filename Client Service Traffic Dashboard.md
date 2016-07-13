@@ -117,4 +117,4 @@ FROM leadgm_campaign
 	LEFT JOIN leadgm_userprofile USING (user_id);
 ```
 #### Snapshot of Tableau dashboard
-![](https://github.com/alichenxiang/custom-sql-in-tableau/blob/master/Client%20Service%20Traffic%20Dashboard.png)
+![](https://github.com/alichenxiang/custom-sql-in-tableau/blob/master/image/Client%20Service%20Traffic%20Dashboard.png)
