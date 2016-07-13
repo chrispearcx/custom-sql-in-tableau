@@ -1,6 +1,6 @@
-# Custom SQL in Tableau
+# Client Service Traffic Dashboard
 ---
-##### Client Service Traffic Dashboard - Product 1 in Redshift
+#### Traffic data of Product 1 in Redshift
 ```sql
 SELECT
 	padded_traffic_reports.import_time_stamp::DATE AS date_stamp,
@@ -12,7 +12,7 @@ SELECT
 	pg_campaigns.description AS campaign_name,
 	pg_targeting_groups.id AS targeting_group_id,
 	pg_targeting_groups.description AS targeting_group_name,
-	CASE public.pg_targeting_groups.otto_disabled
+	CASE pg_targeting_groups.otto_disabled
 		WHEN TRUE THEN 'No'
 		WHEN FALSE THEN 'Yes'
 	END AS otto_obey,
@@ -21,7 +21,7 @@ SELECT
 	padded_traffic_reports.click_through_conversions AS conversions,
 	padded_traffic_reports.media_cost AS media_cost,
 	-- Calculate revenue
-	CASE upper(public.pg_billing_reports.payout_type)
+	CASE upper(pg_billing_reports.payout_type)
 		WHEN 'FEE' THEN padded_traffic_reports.media_cost*(1+pg_billing_reports.payout_value)/pg_billing_reports.exchange_rate
 		WHEN 'CPC' THEN padded_traffic_reports.clicks*pg_billing_reports.payout_value/pg_billing_reports.exchange_rate
 		WHEN 'CPA - PER CONVERSION' THEN padded_traffic_reports.click_through_conversions*pg_billing_reports.payout_value/pg_billing_reports.exchange_rate
@@ -33,11 +33,11 @@ FROM padded_traffic_reports
 		ON (padded_traffic_reports.campaign_id = pg_campaigns.id)
 	LEFT JOIN pg_targeting_groups
 		ON (padded_traffic_reports.targeting_group_id = pg_targeting_groups.id)
-	LEFT JOIN public.pg_billing_reports
+	LEFT JOIN pg_billing_reports
 		ON (padded_traffic_reports.campaign_id = pg_billing_reports.campaign_id
-		AND padded_traffic_reports.import_time_stamp::date = pg_billing_reports.date_stamp);
+		AND padded_traffic_reports.import_time_stamp::DATE = pg_billing_reports.DATE_stamp);
 ```
-##### Client Service Traffic Dashboard - Product 2 in MS SQL Server
+#### Traffic data of Product 2 in MS SQL Server
 ```sql
 SELECT
 	fb_campaigns_statistics_consolidated.DATE AS date_stamp,
@@ -61,7 +61,7 @@ SELECT
         WHEN 'CPC' THEN clicks*payout_value
         WHEN 'CPA' THEN actions*payout_value
         WHEN 'Fee' THEN spent*0.01*ex_rate*(1+payout_value)
-        WHEN 'Flat' THEN spent*0.01*ex_rate+(payout_value*100000/DATEPART(day, EOMONTH(fb_campaigns_statistics_consolidated.date)))/temp.nrow*0.00001
+        WHEN 'Flat' THEN spent*0.01*ex_rate+(payout_value*100000/DATEPART(day, EOMONTH(fb_campaigns_statistics_consolidated.DATE)))/temp.nrow*0.00001
     END AS revenue
 FROM fb_campaigns_statistics_consolidated
 	LEFT JOIN fb_campaigns
@@ -86,10 +86,10 @@ FROM fb_campaigns_statistics_consolidated
             LEFT JOIN fb_campaigns
 				ON fb_campaigns.id = fb_campaigns_statistics_consolidated.campaignId
         WHERE (impressions + clicks + spent + actions > 0 and campaignId > 0)
-		GROUP BY fb_campaigns_statistics_consolidated.date, fb_campaigns.accountId
+		GROUP BY fb_campaigns_statistics_consolidated.DATE, fb_campaigns.accountId
 		) temp;
 ```
-##### Client Service Traffic Dashboard - Product 3 in MySQL
+#### Traffic data of Product 3 in MySQL
 ```sql
 -- Clicks
 SELECT 
