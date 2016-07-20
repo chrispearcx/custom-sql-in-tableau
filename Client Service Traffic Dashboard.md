@@ -1,5 +1,7 @@
 # Client Service Traffic Dashboard
 ---
+#### Overview of Tableau dashboard
+![](https://github.com/alichenxiang/custom-sql-in-tableau/blob/master/image/Client%20Service%20Traffic%20Dashboard.png)
 #### Traffic data of Product 1 in Redshift
 ```sql
 SELECT
@@ -116,5 +118,3 @@ SELECT
 FROM leadgm_campaign 
 	LEFT JOIN leadgm_userprofile USING (user_id);
 ```
-#### Snapshot of Tableau dashboard
-![](https://github.com/alichenxiang/custom-sql-in-tableau/blob/master/image/Client%20Service%20Traffic%20Dashboard.png)
